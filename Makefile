@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aaamam <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/01/10 19:21:38 by aaamam            #+#    #+#              #
+#    Updated: 2024/01/10 19:21:39 by aaamam           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAMEC = client
 NAMES = server
 PRINTF = libftprintf.a
@@ -13,26 +25,26 @@ CFLAGS = -Wall -Werror -Wextra
 INCLUDE = -I include
 RM = rm -rf
 
-all: $(NAMEC) $(NAMES)
+all: $(NAMEC) $(NAMES)       
 
 $(NAMEC): $(OBJC)
 	@make -C printf
-	$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) printf/$(PRINTF) -o $(NAMEC)
+	@$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) printf/$(PRINTF) -o $(NAMEC)
 
 $(NAMES): $(OBJS)
 	@make -C printf
-	$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) -o $(NAMES)
+	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) -o $(NAMES)
 
 clean:
 	@make clean -C printf
-	${RM} ${OBJC}
-	${RM} ${OBJS}
+	@${RM} ${OBJC}
+	@${RM} ${OBJS}
 
 fclean: clean
 	@make fclean -C printf
-	${RM} $(NAMEC)
-	${RM} $(NAMES)
-	${RM} $(PRINTF)
+	@${RM} $(NAMEC)
+	@${RM} $(NAMES)
+	@${RM} $(PRINTF)
 
 re: fclean all
 
