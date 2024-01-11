@@ -32,6 +32,8 @@
 # define SERV_FAIL_USR1 "SIGUSR1"
 # define SERV_FAIL_USR2 "Server failed to send SIGUSR2"
 
+# define COLOR_RESET "\033[0m"
+
 # define UNICODE "\033[0;90m(Undefined with unicode...)\033[0m\n"
 
 #endif

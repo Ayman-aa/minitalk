@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		ft_printf("%sError%s\n", COLOR_RED, COLOR_RESET);
+		ft_printf("%s\n", C_ERROR);
 		return (1);
 	}
 	pid = getpid();

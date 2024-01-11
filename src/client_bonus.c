@@ -15,7 +15,7 @@
 void confirm_msg(int signal)
 {
     if (signal == SIGUSR2)
-        ft_printf("%sMessage received%s\n", COLOR_GREEN, COLOR_RESET);
+        ft_printf("%s%sMessage received%s\n", NOTIFICATION_R1, NOTIFICATION_R2, COLOR_RESET);
 }
 
 static int	ft_atoi(const char *str)
