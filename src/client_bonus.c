@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 13:20:54 by aaamam            #+#    #+#             */
-/*   Updated: 2024/01/11 17:45:46 by aaamam           ###   ########.fr       */
+/*   Created: 2024/01/11 17:52:14 by aaamam            #+#    #+#             */
+/*   Updated: 2024/01/11 17:58:42 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minitalk.h"
+#include "../include/minitalk_bonus.h"
+
+void confirm_msg(int signal)
+{
+    if (signal == SIGUSR2)
+        ft_printf("%sMessage received%s\n", COLOR_GREEN, COLOR_RESET);
+}
 
 static int	ft_atoi(const char *str)
 {
@@ -81,6 +87,8 @@ int	main(int argc, char **argv)
 			ft_atob(pid, argv[2][i]);
 			i++;
 		}
+        signal(SIGUSR2, confirm_msg);
+		ft_atob(pid, '\0');
 	}
 	else
 	{
