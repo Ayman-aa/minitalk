@@ -18,7 +18,7 @@ void	ft_btoa(int sig)
 	static int	i;
 
 	if (sig == SIGUSR1)
-		i |= (0x01 << bit);
+		i |= (1 << bit);
 	bit++;
 	if (bit == 8)
 	{

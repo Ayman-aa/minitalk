@@ -46,7 +46,7 @@ void	ft_atob(int pid, char c)
 	bit = 0;
 	while (bit < 8)
 	{
-        if (c & (0x01 << bit))
+        if (c & (1 << bit))
         {
             if (kill(pid, SIGUSR1) == -1)
             {
@@ -62,7 +62,7 @@ void	ft_atob(int pid, char c)
                 exit(EXIT_FAILURE);
             }
         }
-		usleep(400);
+		usleep(80);
 		bit++;
 	}
 }
