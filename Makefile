@@ -66,6 +66,8 @@ clean:
 	@make clean -C ft_printf
 	@${RM} ${OBJC}
 	@${RM} ${OBJS}
+	@${RM} $(OBJBC)
+	@${RM} $(OBJBS)
 	@echo "$(GREEN)Object files cleaned$(NC)"
 
 fclean: clean

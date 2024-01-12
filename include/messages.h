@@ -15,7 +15,7 @@
 
 # define C_ERROR "\n\033[0;91mError !\033[0m"
 # define C_ARGS "\033[38;5;214mAdd the server PID and a string.\033[0m"
-# define C_EX_ARGS "\033[0;92mExample : ./client PID) (Message)\033[0m\n"
+# define C_EX_ARGS "\033[0;92mExample : ./client (PID) (Message)\033[0m\n"
 
 # define C_NOTIFICATION "\033[0;90mWaiting for notification...\033[0m\n"
 
