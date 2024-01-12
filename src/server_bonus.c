@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	pid = getpid();
-	ft_printf("%d\n", pid);
+	ft_printf(S_PID, pid);
 	act.sa_sigaction = ft_btoa;
 	sigemptyset(&act.sa_mask);
 	act.sa_flags = 0;
