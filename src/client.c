@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:20:54 by aaamam            #+#    #+#             */
-/*   Updated: 2024/01/11 17:45:46 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/01/12 19:20:55 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,22 @@ void	ft_atob(int pid, char c)
 	bit = 0;
 	while (bit < 8)
 	{
-        if (c & (1 << bit))
-        {
-            if (kill(pid, SIGUSR1) == -1)
-            {
-                ft_printf("%s\n", C_ERROR);
-                exit(EXIT_FAILURE);
-            }
-        }
-        else
-        {
-            if (kill(pid, SIGUSR2) == -1)
-            {
-                ft_printf("%s\n", C_ERROR);
-                exit(EXIT_FAILURE);
-            }
-        }
+		if (c & (1 << bit))
+		{
+			if (kill(pid, SIGUSR1) == -1)
+			{
+				ft_printf("%s\n", C_ERROR);
+				exit(EXIT_FAILURE);
+			}
+		}
+		else
+		{
+			if (kill(pid, SIGUSR2) == -1)
+			{
+				ft_printf("%s\n", C_ERROR);
+				exit(EXIT_FAILURE);
+			}
+		}
 		usleep(80);
 		bit++;
 	}
@@ -85,8 +85,8 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("%s\n", C_ERROR);
-        ft_printf("%s\n", C_ARGS);
-        ft_printf("%s\n", C_EX_ARGS);
+		ft_printf("%s\n", C_ARGS);
+		ft_printf("%s\n", C_EX_ARGS);
 		return (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: aaamam <aaamam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:59:33 by aaamam            #+#    #+#             */
-/*   Updated: 2024/01/10 18:29:09 by aaamam           ###   ########.fr       */
+/*   Updated: 2024/01/12 19:24:49 by aaamam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,29 @@ void	ft_btoa(int sig)
 
 int	main(int argc, char **argv)
 {
-    int	pid;
+	int	pid;
 
-    (void)argv;
-    if (argc != 1)
-    {
-        ft_printf("%s\n", C_ERROR);
-        return (1);
-    }
-    pid = getpid();
-    ft_printf(S_PID, pid);
-    while (argc == 1)
-    {
-        if (signal(SIGUSR1, ft_btoa) == SIG_ERR)
-        {
-            ft_printf("%s\n", SA_USR1_FAIL);
-            exit(EXIT_FAILURE);
-        }
-        if (signal(SIGUSR2, ft_btoa) == SIG_ERR)
-        {
-            ft_printf("%s\n", SA_USR2_FAIL);
-            exit(EXIT_FAILURE);
-        }
-        pause ();
-    }
-    return (0);
+	(void)argv;
+	if (argc != 1)
+	{
+		ft_printf("%s\n", C_ERROR);
+		return (1);
+	}
+	pid = getpid();
+	ft_printf(S_PID, pid);
+	while (argc == 1)
+	{
+		if (signal(SIGUSR1, ft_btoa) == SIG_ERR)
+		{
+			ft_printf("%s\n", SA_USR1_FAIL);
+			exit(EXIT_FAILURE);
+		}
+		if (signal(SIGUSR2, ft_btoa) == SIG_ERR)
+		{
+			ft_printf("%s\n", SA_USR2_FAIL);
+			exit(EXIT_FAILURE);
+		}
+		pause();
+	}
+	return (0);
 }
