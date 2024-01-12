@@ -41,35 +41,35 @@ NC = \033[0m
 all: $(NAMEC) $(NAMES)       
 
 $(NAMEC): $(OBJC)
-	@make -C printf
-	@$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) printf/$(PRINTF) -o $(NAMEC)
+	@make -C ft_printf
+	@$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) ft_printf/$(PRINTF) -o $(NAMEC)
 	@echo "$(GREEN)$(NAMEC) compiled successfully$(NC)"
 
 $(NAMES): $(OBJS)
-	@make -C printf
-	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) -o $(NAMES)
+	@make -C ft_printf
+	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) ft_printf/$(PRINTF) -o $(NAMES)
 	@echo "$(GREEN)$(NAMES) compiled successfully$(NC)"
 
 bonus : $(BONUS_NAMEC) $(BONUS_NAMES)
 
 $(BONUS_NAMEC) : $(OBJBC)
-	@make -C printf
-	@$(CC) $(CFLAGS) $(OBJBC) $(INCLUDE) printf/$(PRINTF) -o $(BONUS_NAMEC)
+	@make -C ft_printf
+	@$(CC) $(CFLAGS) $(OBJBC) $(INCLUDE) ft_printf/$(PRINTF) -o $(BONUS_NAMEC)
 	@echo "$(GREEN)$(BONUS_NAMEC) compiled successfully$(NC)"
 
 $(BONUS_NAMES) : $(OBJBS)
-	@make -C printf
-	@$(CC) $(CFLAGS) $(OBJBS) $(INCLUDE) printf/$(PRINTF) -o $(BONUS_NAMES)
+	@make -C ft_printf
+	@$(CC) $(CFLAGS) $(OBJBS) $(INCLUDE) ft_printf/$(PRINTF) -o $(BONUS_NAMES)
 	@echo "$(GREEN)$(BONUS_NAMES) compiled successfully$(NC)"
 
 clean:
-	@make clean -C printf
+	@make clean -C ft_printf
 	@${RM} ${OBJC}
 	@${RM} ${OBJS}
 	@echo "$(GREEN)Object files cleaned$(NC)"
 
 fclean: clean
-	@make fclean -C printf
+	@make fclean -C ft_printf
 	@${RM} $(NAMEC)
 	@${RM} $(NAMES)
 	@${RM} $(BONUS_NAMEC)

@@ -14,7 +14,7 @@
 # define MINITALK_H
 
 # include <signal.h>
-# include "../printf/ft_printf.h"
+# include "../ft_printf/ft_printf.h"
 # include "messages.h"
 
 #endif
