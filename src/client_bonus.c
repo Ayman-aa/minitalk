@@ -68,7 +68,7 @@ void	ft_atob(int pid, char c)
 				exit(EXIT_FAILURE);
 			}
 		}
-		usleep(400);
+		usleep(80);
 		bit++;
 	}
 }
