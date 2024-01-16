@@ -34,6 +34,7 @@ Small data exchange program using UNIX signals.
 <a href="https://leeters.netlify.app/what-you-need-to-know-about-minitalk/" target="_blank">What You Need to Know About Minitalk</a> <br/>
 <a href="https://www.youtube.com/watch?v=L3XuR-iRysU" target="_blank">YouTube Video - Minitalk</a> <br/>
 <a href="https://askcodez.com/gestion-du-signal-et-sigemptyset.html" target="_blank">Gestion du signal et sigemptyset()</a> <br/>
+<a href="https://www.codequoi.com/en/sending-and-intercepting-a-signal-in-c/" target="_blank">Minitalk In a Nutshell</a> <br/>
 
 # Books
 C en action. -Yves Mettier <br/>

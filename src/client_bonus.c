@@ -11,13 +11,16 @@
 /* ************************************************************************** */
 
 #include "../include/minitalk_bonus.h"
-
+/*	we use confirm_msg function to verify if the server has 
+	recieved the signal (server send kill(info->si_pid, SIGUSR2);)	*/
 void	confirm_msg(int signal)
 {
 	if (signal == SIGUSR2)
 		ft_printf("%s%s\n", NOTIFICATION_R1, NOTIFICATION_R2);
 }
-
+/*	we use ft_atoi to convert the ascii value of the pid to 
+	an integer value to print it and to use it later when we try
+ 	to send the signal to the server	*/
 static int	ft_atoi(const char *str)
 {
 	int					i;
@@ -44,7 +47,15 @@ static int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
+/*	we use ft_atob to read an ascii value of the 
+	character c (av[1][i]) as bit a value that consist
+	either of 1 or 0 and send these values with
+	signal SIGUSR1 if its set or SIGUSR2 if it isn't 
+	we use what we call  a bitwise operation to shift
+	from a bit to another from left direction then
+	sending using the kill() function.
+	usleep() to set a delay between each sent signal 
+	so we ensure that the server will get the correct values	*/
 void	ft_atob(int pid, char c)
 {
 	int	bit;
