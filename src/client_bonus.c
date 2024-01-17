@@ -18,6 +18,7 @@ void	confirm_msg(int signal)
 	if (signal == SIGUSR2)
 		ft_printf("%s%s\n", NOTIFICATION_R1, NOTIFICATION_R2);
 }
+
 /*	we use ft_atoi to convert the ascii value of the pid to 
 	an integer value to print it and to use it later when we try
  	to send the signal to the server	*/
@@ -47,6 +48,7 @@ static int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
 /*	we use ft_atob to read an ascii value of the 
 	character c (av[1][i]) as bit a value that consist
 	either of 1 or 0 and send these values with
