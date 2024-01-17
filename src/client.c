@@ -79,6 +79,10 @@ void	ft_atob(int pid, char c)
 	}
 }
 
+/*	we get the pid and the message entered by the user
+	and we send each one of the characters to the server
+	in the case of none of the conditions are met 
+	we print error messages */
 int	main(int argc, char **argv)
 {
 	int	pid;

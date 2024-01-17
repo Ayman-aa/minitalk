@@ -12,6 +12,15 @@
 
 #include "../include/minitalk_bonus.h"
 
+/*	we use ft_btoa as signal handler when we recieve a signal
+	if the signal is SIGUSR1 we use bitwise operation to 
+	accumulate the bits recieved in 'int i' when 8 bits are 
+	recieved and we reached the end of the transmition
+	we print the character and we send a signal back
+	to the client which is sender process
+	we identify its id by using siginfo.si_pid tha contains
+	the pid of the client then we send a SIGUSR2 back to the
+	client */
 void	ft_btoa(int sig, siginfo_t *info, void *context)
 {
 	static int	bit;
@@ -31,6 +40,18 @@ void	ft_btoa(int sig, siginfo_t *info, void *context)
 	}
 }
 
+/*  We obtain the process ID (PID) of the server using
+ 	getpid() and print it to the console.
+    Then, we set ft_btoa as the signal handler function
+	for SIGUSR1 and SIGUSR2.
+    The following line, sigemptyset(&act.sa_mask), ensures
+	that the signal mask is cleared, allowing the signal 
+	handler to run without blocking any other signals.
+    Essentially, it allows all signals to be processed 
+	during the execution of the signal handler.
+    Once everything is set up, we are ready to handle 
+	incoming SIGUSR1 and SIGUSR2 signals
+    that are received by the server. */
 int	main(int argc, char **argv)
 {
 	int					pid;

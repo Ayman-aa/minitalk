@@ -12,6 +12,11 @@
 
 #include "../include/minitalk.h"
 
+/*	we use ft_btoa as signal handler when we recieve a signal
+	if the signal is SIGUSR1 we use bitwise operation to 
+	accumulate the bits recieved in 'int i' when 8 bits are 
+	recieved and we reached the end of the transmition
+	we print the character */
 void	ft_btoa(int sig)
 {
 	static int	bit;
@@ -28,6 +33,18 @@ void	ft_btoa(int sig)
 	}
 }
 
+/* 	We retrieve the process ID (PID) of the server using 
+	getpid() and display it on the console.
+	Next, we set up ft_btoa as the signal handler
+	function for both SIGUSR1 and SIGUSR2.
+    The server enters an infinite loop using 
+	while (argc == 1), continuously waiting for incoming signals.
+    Upon receiving SIGUSR1, ft_btoa accumulates bits and prints 
+	the corresponding character when 8 bits are collected.
+    This process repeats, allowing the server to handle multiple 
+	incoming signals without blocking.
+    The pause() function suspends the server until a signal is received.
+*/
 int	main(int argc, char **argv)
 {
 	int	pid;
