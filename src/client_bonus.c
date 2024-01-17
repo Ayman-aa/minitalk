@@ -86,6 +86,14 @@ void	ft_atob(int pid, char c)
 	}
 }
 
+/*	we get the pid and the message entered by the user
+	and we send each one of the characters to the server
+	we use signal() to keep waiting for the SIGUSR2 signal
+	from the server to print the confirmation message 
+	then we terminate the session by sending a '\0'
+	so the server acknowledge that we finished the
+	transmition of the characters so it then send a 
+	SIGUSR2 back to client */
 int	main(int argc, char **argv)
 {
 	int	pid;
