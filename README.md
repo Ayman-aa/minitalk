@@ -1,4 +1,4 @@
-# 1337-minitalk-42
+# Minitalk
 Small data exchange program using UNIX signals.
 
 # Resources
